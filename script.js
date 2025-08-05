@@ -1,22 +1,48 @@
 const quizData = [
   {
-    question: "What does DOM stand for in JavaScript?",
-    a: "Document Object Model",
-    b: "Data Object Management",
-    c: "Document Oriented Model",
-    d: "Data Output Method",
-    correct: "a"
+    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
+    a: "<script name='xxx.js'>",
+    b: "<script src='xxx.js'>",
+    c: "<script href='xxx.js'>",
+    d: "<script file='xxx.js'>",
+    correct: "b"
   },
   {
-    question: "Which of the following is not a JavaScript data type?",
-    a: "String",
-    b: "Boolean",
-    c: "Float",
-    d: "Number",
+    question: "How do you write 'Hello World' in an alert box?",
+    a: "msgBox('Hello World');",
+    b: "alertBox('Hello World');",
+    c: "msg('Hello World');",
+    d: "alert('Hello World');",
+    correct: "d"
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    a: "function = myFunction()",
+    b: "function:myFunction()",
+    c: "function myFunction()",
+    d: "create.myFunction()",
     correct: "c"
   },
-  // Add more questions here — up to 50
+  {
+    question: "How do you call a function named 'myFunction'?",
+    a: "call myFunction()",
+    b: "myFunction()",
+    c: "call function myFunction()",
+    d: "Call.myFunction()",
+    correct: "b"
+  },
+  {
+    question: "How to write an IF statement in JavaScript?",
+    a: "if i = 5 then",
+    b: "if i == 5 then",
+    c: "if (i == 5)",
+    d: "if i = 5",
+    correct: "c"
+  },
+  // Additional 45 questions...
 ];
+
+// Quiz logic code continues here (same as the one shared earlier)
 
 const questionEl = document.getElementById('question');
 const aBtn = document.getElementById('a');
