@@ -39,10 +39,49 @@ const quizData = [
     d: "if i = 5",
     correct: "c"
   },
-  // Additional 45 questions...
+  {
+    question: "What is the correct way to write a JavaScript array?",
+    a: "var colors = 'red', 'green', 'blue'",
+    b: "var colors = (1:'red', 2:'green', 3:'blue')",
+    c: "var colors = ['red', 'green', 'blue']",
+    d: "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
+    correct: "c"
+  },
+  {
+    question: "Which event occurs when the user clicks on an HTML element?",
+    a: "onmouseover",
+    b: "onchange",
+    c: "onclick",
+    d: "onmouseclick",
+    correct: "c"
+  },
+  {
+    question: "How do you declare a JavaScript variable?",
+    a: "v carName;",
+    b: "var carName;",
+    c: "variable carName;",
+    d: "string carName;",
+    correct: "b"
+  },
+  {
+    question: "Which operator is used to assign a value to a variable?",
+    a: "*",
+    b: "=",
+    c: "-",
+    d: "+",
+    correct: "b"
+  },
+  {
+    question: "What is the correct JavaScript syntax to change the content of the HTML element below? <p id='demo'>This is a demonstration.</p>",
+    a: "document.getElement('p').innerHTML = 'Hello World!';",
+    b: "document.getElementById('demo').innerHTML = 'Hello World!';",
+    c: "#demo.innerHTML = 'Hello World!';",
+    d: "document.getElementByName('p').innerHTML = 'Hello World!';",
+    correct: "b"
+  }
 ];
 
-// Quiz logic code continues here (same as the one shared earlier)
+// Add 40 more questions here for full 50 coverage...
 
 const questionEl = document.getElementById('question');
 const aBtn = document.getElementById('a');
@@ -83,7 +122,7 @@ nextBtn.addEventListener("click", () => {
   if (currentQuiz < quizData.length) {
     loadQuiz();
   } else {
-    quiz.innerHTML = `<h2>You scored ${score}/${quizData.length}!</h2><button onclick="location.reload()">Restart</button>`;
+    quiz.innerHTML = `<h2>You scored ${score}/${quizData.length}!</h2><button onclick=\"location.reload()\">Restart</button>`;
   }
 });
 
