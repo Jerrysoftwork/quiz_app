@@ -38,8 +38,7 @@ const quizData = [
     c: "console.log()",
     d: "print.console()",
     correct: "c"
-  }
-  const quizData = [
+  },
   {
     question: "What is JavaScript primarily used for?",
     a: "Server-side scripting",
@@ -441,7 +440,7 @@ const quizData = [
     correct: "b"
   },
 ];
-];
+
 
 let currentQuiz = 0;
 let score = 0;
