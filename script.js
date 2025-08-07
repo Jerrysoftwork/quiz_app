@@ -1,98 +1,81 @@
 const quizData = [
   {
-    question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-    a: "<script name='xxx.js'>",
-    b: "<script src='xxx.js'>",
-    c: "<script href='xxx.js'>",
-    d: "<script file='xxx.js'>",
+    question: "What does JS stand for?",
+    a: "JavaStructure",
+    b: "JavaScript",
+    c: "JustScript",
+    d: "Jolly Script",
     correct: "b"
   },
   {
-    question: "How do you write 'Hello World' in an alert box?",
-    a: "msgBox('Hello World');",
-    b: "alertBox('Hello World');",
-    c: "msg('Hello World');",
-    d: "alert('Hello World');",
-    correct: "d"
-  },
-  {
-    question: "How do you create a function in JavaScript?",
-    a: "function = myFunction()",
-    b: "function:myFunction()",
-    c: "function myFunction()",
-    d: "create.myFunction()",
+    question: "Which of the following is not a JavaScript data type?",
+    a: "Undefined",
+    b: "Number",
+    c: "Float",
+    d: "Boolean",
     correct: "c"
   },
   {
-    question: "How do you call a function named 'myFunction'?",
-    a: "call myFunction()",
-    b: "myFunction()",
-    c: "call function myFunction()",
-    d: "Call.myFunction()",
-    correct: "b"
+    question: "Which symbol is used for comments in JavaScript?",
+    a: "//",
+    b: "#",
+    c: "<!-- -->",
+    d: "**",
+    correct: "a"
   },
-  {
-    question: "How to write an IF statement in JavaScript?",
-    a: "if i = 5 then",
-    b: "if i == 5 then",
-    c: "if (i == 5)",
-    d: "if i = 5",
-    correct: "c"
-  }
-  // You can add more here to reach 50
+  // ... [Add 47 more questions here]
 ];
 
-const questionEl = document.getElementById('question');
-const aBtn = document.getElementById('a');
-const bBtn = document.getElementById('b');
-const cBtn = document.getElementById('c');
-const dBtn = document.getElementById('d');
-const nextBtn = document.getElementById('next');
-const progressEl = document.getElementById('progress');
-
+// Initialize
 let currentQuiz = 0;
 let score = 0;
-let selected = null;
+
+const questionEl = document.getElementById('question');
+const answerEls = document.querySelectorAll('.answer');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+const submitBtn = document.getElementById('submit');
+
+loadQuiz();
 
 function loadQuiz() {
   deselectAnswers();
-  const current = quizData[currentQuiz];
-  questionEl.textContent = current.question;
-  aBtn.textContent = current.a;
-  bBtn.textContent = current.b;
-  cBtn.textContent = current.c;
-  dBtn.textContent = current.d;
-  progressEl.textContent = `Question ${currentQuiz + 1} of ${quizData.length}`;
+  const currentData = quizData[currentQuiz];
+
+  questionEl.innerText = currentData.question;
+  a_text.innerText = currentData.a;
+  b_text.innerText = currentData.b;
+  c_text.innerText = currentData.c;
+  d_text.innerText = currentData.d;
 }
 
 function deselectAnswers() {
-  selected = null;
-  [aBtn, bBtn, cBtn, dBtn].forEach(btn => btn.style.background = "");
+  answerEls.forEach(answer => answer.checked = false);
 }
 
-[aBtn, bBtn, cBtn, dBtn].forEach(btn => {
-  btn.addEventListener("click", () => {
-    deselectAnswers();
-    selected = btn.id;
-    btn.style.background = "#90ee90"; // green highlight
+function getSelected() {
+  let answer;
+  answerEls.forEach(ans => {
+    if (ans.checked) {
+      answer = ans.id;
+    }
   });
-});
+  return answer;
+}
 
-nextBtn.addEventListener("click", () => {
-  if (selected) {
-    if (selected === quizData[currentQuiz].correct) {
+submitBtn.addEventListener('click', () => {
+  const answer = getSelected();
+  if (answer) {
+    if (answer === quizData[currentQuiz].correct) {
       score++;
     }
     currentQuiz++;
     if (currentQuiz < quizData.length) {
       loadQuiz();
     } else {
-      document.getElementById('quiz').innerHTML =
-        `<h2>You scored ${score}/${quizData.length}!</h2><button onclick="location.reload()">Restart</button>`;
+      quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} correctly</h2><button onclick="location.reload()">Reload</button>`;
     }
-  } else {
-    alert("Please select an answer before continuing.");
   }
 });
-
-loadQuiz();
