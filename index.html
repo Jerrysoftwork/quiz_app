@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JavaScript Quiz App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="quiz-container" id="quiz">
-    <p id="progress">Question 1 of 50</p>
-    <h2 id="question">Loading...</h2>
-    <div class="answers">
-      <button class="answer" id="a"></button>
-      <button class="answer" id="b"></button>
-      <button class="answer" id="c"></button>
-      <button class="answer" id="d"></button>
+    <div class="quiz-header">
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li><input type="radio" name="answer" id="a" class="answer"><label for="a" id="a_text"></label></li>
+        <li><input type="radio" name="answer" id="b" class="answer"><label for="b" id="b_text"></label></li>
+        <li><input type="radio" name="answer" id="c" class="answer"><label for="c" id="c_text"></label></li>
+        <li><input type="radio" name="answer" id="d" class="answer"><label for="d" id="d_text"></label></li>
+      </ul>
     </div>
-    <button id="next">Next</button>
+    <button id="submit">Submit</button>
   </div>
-  <script type="module" src="quiz.js"></script>
 
+  <script src="script.js"></script>
 </body>
 </html>
