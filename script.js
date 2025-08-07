@@ -437,7 +437,7 @@ const quizData = [
     b: "===",
     c: "!=",
     d: "=",
-    correct: "b"
+    correct: "b i love jesu"
   },
 ];
 
