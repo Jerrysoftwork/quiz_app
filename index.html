@@ -26,3 +26,21 @@
   <script src="script.js"></script>
 </body>
 </html>
+<script>
+  // JavaScript code to handle quiz logic
+  const quizData = [
+    {
+      question: "What is the capital of France?",
+      a: "Berlin",
+      b: "Madrid",
+      c: "Paris",
+      d: "Rome",
+      correct: "c"
+    },
+    // Add more questions here
+  ];
+
+  let currentQuiz = 0;
+  const questionElement = document.getElementById("question");
+  const a_text = document.getElementById("a_text");
+  const b_text = document.getElementById("b_text");

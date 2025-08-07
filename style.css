@@ -49,3 +49,6 @@ button:disabled {
   display: flex;
   justify-content: space-between;
 }
+.question {
+  margin-bottom: 20px;
+}
