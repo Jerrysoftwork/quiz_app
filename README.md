@@ -3,8 +3,9 @@
 A modern, interactive JavaScript quiz application with a beautiful glassmorphism UI, timer functionality, and comprehensive navigation features.
 
 ![Quiz Preview](https://img.shields.io/badge/JavaScript-Quiz-blue?style=for-the-badge&logo=javascript)
-![Live link](https://quiz-app-khaki-rho.vercel.app/)
 
+
+  [View Live Project](https://quiz-app-khaki-rho.vercel.app/)
 ## ✨ Features
 
 ### 🎯 Core Functionality
