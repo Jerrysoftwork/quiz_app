@@ -445,7 +445,7 @@ function createPagination() {
   
   for (let i = 0; i < uniqueQuizData.length; i++) {
     const dot = document.createElement('div');
-    dot.className = 'pagination-dot';
+    dot.className = 'pagination-do';
     
     if (i === currentQuiz) {
       dot.classList.add('active');
